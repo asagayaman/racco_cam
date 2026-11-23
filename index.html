@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ラッコライブ">
+<title>鳥羽水族館 ラッコライブカメラ</title>
+<style>
+  html, body { margin: 0; height: 100%; background: #000; overflow: hidden; }
+  iframe { position: fixed; inset: 0; width: 100%; height: 100%; border: 0; }
+  #note {
+    position: fixed; left: 0; right: 0; bottom: env(safe-area-inset-bottom, 0px);
+    padding: 6px 10px; text-align: center; font: 12px/1.4 sans-serif;
+    color: #fff; background: rgba(0,0,0,.45); pointer-events: none;
+    opacity: 0; transition: opacity .6s;
+  }
+  #note.show { opacity: 1; }
+  #note a { color: #8cf; pointer-events: auto; }
+  #open {
+    position: fixed; top: calc(env(safe-area-inset-top, 0px) + 8px); right: 8px;
+    padding: 6px 10px; font: 12px/1 sans-serif; color: #fff; text-decoration: none;
+    background: rgba(0,0,0,.55); border-radius: 14px; z-index: 5;
+  }
+</style>
+</head>
+<body>
+<iframe
+  src="https://www.youtube.com/embed/YonXVFE9C3g?autoplay=1&mute=1&rel=0&playsinline=1&modestbranding=1"
+  title="鳥羽水族館 ラッコ水槽ライブカメラ"
+  allow="autoplay; fullscreen; picture-in-picture; encrypted-media"
+  allowfullscreen></iframe>
+<a id="open" href="https://www.youtube.com/watch?v=YonXVFE9C3g" target="_blank" rel="noopener">YouTubeで開く ↗</a>
+<div id="note">鳥羽水族館 ラッコ水槽ライブカメラ（24時間配信）。映らない時は
+  <a href="https://www.youtube.com/watch?v=YonXVFE9C3g" target="_blank" rel="noopener">YouTubeで開く</a>
+</div>
+<script>
+  // 数秒だけ補足を表示して消す
+  const n = document.getElementById('note');
+  setTimeout(() => n.classList.add('show'), 1500);
+  setTimeout(() => n.classList.remove('show'), 9000);
+</script>
+</body>
+</html>
